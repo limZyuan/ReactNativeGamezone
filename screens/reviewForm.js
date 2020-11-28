@@ -32,6 +32,7 @@ const ReviewForm = ({ addReview }) => {
               placeholder="Review Title"
               onChangeText={formikProps.handleChange("title")}
               value={formikProps.values.title}
+              onBlur={formikProps.handleBlur("title")}
             />
             <Text style={globalStyles.errorText}>
               {formikProps.touched.title && formikProps.errors.title}
@@ -42,6 +43,7 @@ const ReviewForm = ({ addReview }) => {
               placeholder="Review body"
               onChangeText={formikProps.handleChange("body")}
               value={formikProps.values.body}
+              onBlur={formikProps.handleBlur("body")}
             />
             <Text style={globalStyles.errorText}>
               {formikProps.touched.body && formikProps.errors.body}
@@ -52,9 +54,10 @@ const ReviewForm = ({ addReview }) => {
               onChangeText={formikProps.handleChange("rating")}
               value={formikProps.values.rating}
               keyboardType="numeric"
+              onBlur={formikProps.handleBlur("rating")}
             />
             <Text style={globalStyles.errorText}>
-              {formikProps.touched.errors && formikProps.errors.rating}
+              {formikProps.touched.rating && formikProps.errors.rating}
             </Text>
             <Button
               title="submit"
